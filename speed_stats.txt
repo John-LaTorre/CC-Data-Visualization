@@ -1,0 +1,17 @@
+WiFi Home Median = 17.6375
+
+WiFi Home Average(Mean) = 16.85350724637681
+
+WiFi Home Variance = 13.257566967087454
+
+New WiFi Home Median = 22.833
+
+New WiFi Home Average(Mean) = 23.831522727272727
+
+New WiFi Home Variance = 19.104887833719577
+
+Old WiFi Home Median = 16.3795
+
+Old WiFi Home Average(Mean) = 13.587202127659575
+
+Old WiFi Home Variance = 7.505797913183102
