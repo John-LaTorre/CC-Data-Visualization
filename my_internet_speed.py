@@ -6,22 +6,31 @@ filename = 'SpeedTestExport_20200126.csv'
 with open(filename) as f:
     reader = csv.reader(f)
     header_row = next(reader)
-
-    dates, speed = [], []
+    dates, dates2, speed, speed2 = [], [], [], []
     for row in reader:
-        if row[2] == 'SSID: Holly Hill':
-            try:
-                current_date = datetime.strptime(row[0], "%m/%d/%Y %H:%M")
-                up_speed = float(int(row[5])/ 1000)
-            except ValueError:
-                print(current_date, 'missing data')
+        if row[2] != '':
+            if row[2] == 'SSID: Holly Hill':
+                try:
+                    current_date = datetime.strptime(row[0], "%m/%d/%Y %H:%M")
+                    up_speed = float(int(row[5])/ 1000)
+                except ValueError:
+                    print(current_date, 'missing data')
+                else:
+                    dates.append(current_date)
+                    speed.append(up_speed)
             else:
-                dates.append(current_date)
-                speed.append(up_speed)
+                try:
+                    current_date = datetime.strptime(row[0], "%m/%d/%Y %H:%M")
+                    up_speed = float(int(row[5])/ 1000)
+                except ValueError:
+                    print(current_date, 'missing data')
+                else:
+                    dates2.append(current_date)
+                    speed2.append(up_speed)
 
 
-fig = plt.figure(dpi=128, figsize=(10, 6))
-plt.bar(dates, speed, align='center', alpha= 0.5, color='b')
+plt.bar(dates, speed, align='center', alpha=0.5, color= 'b')
+plt.bar(dates2, speed2, align='center', alpha=0.5, color= 'r')
 
 plt.ylabel('Speed in Mbps')
 plt.title('Internet speed over time')
