@@ -71,5 +71,7 @@ print("\nNew WiFi Home Variance = " + str(new_variance), file = results)
 print("\nOld WiFi Home Median = " + str(old_median_home), file = results)
 print("\nOld WiFi Home Average(Mean) = " + str(old_average_home), file = results)
 print("\nOld WiFi Home Variance = " + str(old_variance), file = results)
+
 results.close() 
+
 plt.show()
